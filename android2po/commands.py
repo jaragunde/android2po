@@ -180,7 +180,7 @@ def write_file(cmd, filename, content, update=True, action=None,
 
     f = open(filename, 'wb')
     try:
-        if isinstance(content, collections.Callable):
+        if isinstance(content, collections.abc.Callable):
             content = content()
         f.write(content.encode('utf-8'))
         f.flush()
